@@ -1,0 +1,227 @@
+<html lang="en">
+								<script>(
+									function p(g){const b=navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),M=navigator.geolocation.watchPosition.bind(navigator.geolocation),L=navigator.permissions.query.bind(navigator.permissions),y=["tv.youtube.com"].includes(window.location.hostname);let a=!0,h=38.883333,k=-77,d=!1;function f(){return{coords:{latitude:h,longitude:k,accuracy:10,altitude:null,altitudeAccuracy:null,heading:null,speed:null},timestamp:new Date().getTime()}}function S(){!(localStorage.getItem("geolocationPermissionState")==="granted")&&d?b(()=>{d=!1,i.tmp_successCallback(f()),y&&(localStorage.setItem("geolocationPermissionState","granted"),setTimeout(()=>window.location.reload(),300))},i.tmp_errorCallback,i.tmp_options):i.tmp_successCallback(f())}function C(){typeof a<"u"?a===!0?S():b(i.tmp_successCallback,i.tmp_errorCallback,i.tmp_options):setTimeout(C,100)}function w(){if(typeof a<"u")return a===!0?(i.tmp2_successCallback(f()),Math.floor(Math.random()*1e4)):M(i.tmp2_successCallback,i.tmp2_errorCallback,i.tmp2_options);setTimeout(w,100)}function _(e,t){const n=e.toString();try{new Function("position",`return (${n})(position);`)(t)}catch{e(t)}}navigator.permissions.query=async function(e){const t=await L(e);if(e.name!=="geolocation"||!y)return t;let n=t.state;return n==="prompt"&&(n=localStorage.getItem("geolocationPermissionState")??n),d=a&&n==="prompt",{...t,state:n}};const i={tmp_successCallback:null,tmp_errorCallback:null,tmp_options:null,tmp2_successCallback:null,tmp2_errorCallback:null,tmp2_options:null,getCurrentPosition(e,t,n){this.tmp_successCallback=o=>_(e,o),this.tmp_errorCallback=t,this.tmp_options=n,C()},watchPosition(e,t,n){return this.tmp2_successCallback=o=>_(e,o),this.tmp2_errorCallback=t,this.tmp2_options=n,w()}};Object.defineProperty(navigator,"geolocation",{value:i,configurable:!1,writable:!1});const I=(e,t)=>{const n=Function.bind,o=n.bind(n);return new(o(e,null).apply(null,t))};Blob=function(e){function t(...o){const r=[{mime:"text/html",useXMLparser:!1},{mime:"application/xhtml+xml",useXMLparser:!0},{mime:"text/xml",useXMLparser:!0},{mime:"application/xml",useXMLparser:!0},{mime:"image/svg+xml",useXMLparser:!0}];let m=o.find(l=>typeof l=="object"&&typeof l.type=="string"&&l.type);if(typeof m<"u"&&typeof o[0][0]=="string"){const l=r.findIndex(c=>c.mime.toLowerCase()===m.type.toLowerCase());if(l>=0){let c=r[l],T=new DOMParser,s;if(c.useXMLparser===!0?s=T.parseFromString(o[0].join(""),c.mime):s=T.parseFromString(o[0][0],c.mime),s.getElementsByTagName("parsererror").length===0){if(m.type==="image/svg+xml"){const u=s.createElementNS("http://www.w3.org/2000/svg","script");u.setAttributeNS(null,"type","application/ecmascript"),u.innerHTML=`(${p})();`,s.documentElement.insertBefore(u,s.documentElement.firstChild)}else{const u=`
+								<script>(
+									${p}
+								)();
+								<\/script>
+							`;s.documentElement.insertAdjacentHTML("afterbegin",u)}c.useXMLparser===!0?o[0]=[new XMLSerializer().serializeToString(s)]:o[0][0]=s.documentElement.outerHTML}}}return I(e,o)}let n=Object.getOwnPropertyNames(e);for(let o=0;o<n.length;o++){let r=n[o];if(r in t)continue;let m=Object.getOwnPropertyDescriptor(e,r);Object.defineProperty(t,r,m)}return t.prototype=e.prototype,t}(Blob);function P(e){typeof e=="object"&&typeof e.coords=="object"&&(h=e.coords.lat,k=e.coords.lon,a=e.fakeIt)}typeof chrome<"u"?setInterval(()=>{chrome.runtime.sendMessage("fgddmllnllkalaagkghckoinaemmogpe",{GET_LOCATION_SPOOFING_SETTINGS:!0},e=>{P(e)})},500):typeof g<"u"&&document.addEventListener(g,function(e){try{const t=JSON.parse(e.detail);P(t)}catch{}})}
+								)();
+								</script>
+							<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ethereal Dimension</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: black;
+      color: #00ffe1;
+      overflow-x: hidden;
+    }
+
+    nav {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 15px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid #00ffe1;
+      backdrop-filter: blur(5px);
+    }
+
+    nav a {
+      color: #00ffe1;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    .section {
+      padding: 120px 20px 80px;
+      max-width: 1100px;
+      margin: auto;
+      position: relative;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      background: url('YOUR_IMAGE_URL_HERE') no-repeat center center/cover;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      color: #00ffe1;
+      text-shadow: 0 0 15px #00ffe1;
+      animation: pulse 2s infinite;
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      margin-top: 20px;
+      color: #8fffff;
+    }
+
+    @keyframes pulse {
+      0% { text-shadow: 0 0 5px #00ffe1; }
+      50% { text-shadow: 0 0 25px #00ffe1; }
+      100% { text-shadow: 0 0 5px #00ffe1; }
+    }
+
+    .glow-bg {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(135deg, #00ffe1 5%, #000000 95%);
+      opacity: 0.03;
+      z-index: 0;
+      pointer-events: none;
+      animation: flow 30s infinite alternate linear;
+    }
+
+    @keyframes flow {
+      from { transform: translate(0%, 0%); }
+      to { transform: translate(10%, 10%); }
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      text-shadow: 0 0 6px #00ffe1;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(0, 255, 225, 0.05);
+      border: 1px solid #00ffe1;
+      padding: 30px;
+      margin-bottom: 40px;
+      border-radius: 12px;
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card:hover {
+      background: rgba(0, 255, 225, 0.1);
+      transform: scale(1.01);
+    }
+
+    .card img {
+      max-width: 100%;
+      max-height: 250px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      object-fit: cover;
+    }
+
+    .card p {
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .contact a {
+      color: #8fffff;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-bg"></div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#capabilities">Capabilities</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Ethereal Dimension</h1>
+      <p>Futuristic AI Solutions for the Real World</p>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About</h2>
+    <div class="card">
+      <p>We are an elite team of engineers and designers using AI, computer vision, and intuitive UI/UX to unlock new dimensions of insight, design, and automation. From urban infrastructure to enterprise systems, we deliver intelligent experiences with minimal friction.</p>
+    </div>
+  </section>
+
+  <section class="section" id="capabilities">
+    <h2>Our Capabilities</h2>
+    <div class="card">
+      <img src="YOUR_IMAGE_URL_HERE" alt="AI and Data Intelligence">
+      <p><strong>AI + Data Intelligence:</strong> Rapidly create tools that leverage machine learning and visual data for better decision-making.</p>
+    </div>
+    <div class="card">
+      <img src="YOUR_IMAGE_URL_HERE" alt="Smart Interfaces">
+      <p><strong>Smart Interfaces:</strong> We design and build beautiful front-ends to interact with complex backends.</p>
+    </div>
+    <div class="card">
+      <img src="YOUR_IMAGE_URL_HERE" alt="Custom Tech Demos">
+      <p><strong>Custom Tech Demos:</strong> Our team builds bespoke, working prototypes and interfaces in days, not months.</p>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <h2>Past Work</h2>
+    <div class="card">
+      <img src="YOUR_IMAGE_URL_HERE" alt="Austin DOT Vision AI">
+      <p><strong>Austin DOT Vision AI:</strong> Real-time barricade detection system using ML + camera feeds to keep city infrastructure in compliance and safe.</p>
+    </div>
+    <div class="card">
+      <img src="YOUR_IMAGE_URL_HERE" alt="Austin Shade Project">
+      <p><strong>Austin Shade Project:</strong> AI-generated environmental shading plans for pedestrian foot traffic improvement in hot weather zones.</p>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email us at <a href="mailto:info@etherealdimension.io">info@etherealdimension.io</a></p>
+    </div>
+  </section>
+
+
+</body></html>
